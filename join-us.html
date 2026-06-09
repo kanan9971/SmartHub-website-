@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us | SmartHub Connect</title>
+<meta name="description" content="Job opportunities at SmartHub Connect — Administrative Assistant, Event Planner, and Editor positions available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.jobs-section { padding: var(--section-pad) 0; }
+.job-card {
+  border: 1px solid var(--warm-gray); border-radius: 20px;
+  padding: clamp(36px,4vw,52px); margin-bottom: 28px;
+  transition: all 0.3s; display: grid;
+  grid-template-columns: 1fr auto; gap: 24px; align-items: start;
+}
+.job-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,181,173,0.10); }
+.job-card:last-child { margin-bottom: 0; }
+.job-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--teal-pale); color: var(--teal-deep);
+  padding: 5px 14px; border-radius: 30px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
+  margin-bottom: 16px;
+}
+.job-card h3 {
+  font-family: var(--font-display); font-size: 26px;
+  font-weight: 600; color: var(--navy); margin-bottom: 24px;
+}
+.job-section-title {
+  font-size: 13px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 12px; margin-top: 20px;
+}
+.job-section-title:first-of-type { margin-top: 0; }
+.job-list {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+}
+.job-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; color: var(--text-light); line-height: 1.5;
+}
+.job-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0; margin-top: 8px;
+}
+.job-apply-btn {
+  flex-shrink: 0;
+}
+
+.apply-section { padding: var(--section-pad) 0; background: var(--off-white); }
+.apply-card {
+  background: var(--white); border-radius: 20px;
+  padding: clamp(40px,5vw,64px); max-width: 760px; margin: 0 auto;
+  border: 1px solid var(--warm-gray);
+}
+.apply-card h2 {
+  font-family: var(--font-display); font-size: clamp(26px,3vw,36px);
+  font-weight: 600; color: var(--navy); margin-bottom: 16px;
+}
+.apply-card > p { font-size: 15px; color: var(--text-light); margin-bottom: 32px; line-height: 1.75; }
+
+.culture-section { padding: var(--section-pad) 0; }
+.culture-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.culture-card {
+  padding: 32px 24px; border-radius: var(--radius);
+  border: 1px solid var(--warm-gray); text-align: center; transition: all 0.3s;
+}
+.culture-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,181,173,0.10); }
+.culture-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--teal-pale); margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.culture-icon svg { width: 22px; height: 22px; color: var(--teal); }
+.culture-card h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.culture-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+
+@media (max-width: 768px) {
+  .job-card { grid-template-columns: 1fr; }
+  .job-apply-btn { align-self: flex-start; }
+  .culture-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav-interior" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="SmartHub Connect" class="nav-logo-mark">
+      <div class="nav-logo-text">SmartHub Connect<span>Single-Family Office</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">EN | 繁體</div>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-close" id="mobileClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="membership.html">Membership</a><a href="booking.html">Booking</a>
+  <a href="contact.html" style="background:var(--red); margin-top:8px;">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-hero-label">Careers</div>
+      <h1>Join Our Team</h1>
+      <p>Be part of a professional, happy team that believes trust is the foundation of every long-term relationship. Great service comes from a great team — and we are one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Life at SmartHub</div>
+      <h2 class="reveal reveal-delay-1">Why Work with Us</h2>
+    </div>
+    <div class="culture-grid">
+      <div class="culture-card reveal">
+        <div class="culture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Professional Environment</h3>
+        <p>Work in a prestigious Wan Chai office, gain real-world experience, and build your professional network.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-1">
+        <div class="culture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Fast-Paced Learning</h3>
+        <p>Exposure to corporate services, compliance, wealth management, and business operations from day one.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-2">
+        <div class="culture-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Great Team Culture</h3>
+        <p>We're a happy, supportive team that takes pride in delivering quality service. Integrity is our core value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB LISTINGS -->
+<section class="jobs-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Open Positions</div>
+      <h2 class="reveal reveal-delay-1">Current Opportunities</h2>
+    </div>
+
+    <!-- Admin Assistant -->
+    <div class="job-card reveal">
+      <div>
+        <div class="job-tag">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
+          Part-time · Wan Chai
+        </div>
+        <h3>Administrative Assistant</h3>
+        <div class="job-section-title">Key Responsibilities</div>
+        <ul class="job-list">
+          <li>Serve as the receptionist for various client companies, ensuring a welcoming and professional atmosphere</li>
+          <li>Handle client enquiries and contacts with professionalism</li>
+        </ul>
+        <div class="job-section-title">Requirements</div>
+        <ul class="job-list">
+          <li>Currently enrolled in a full-time undergraduate program</li>
+          <li>Excellent communication and interpersonal skills</li>
+          <li>Proficiency in Cantonese, English, and Mandarin</li>
+        </ul>
+      </div>
+      <div class="job-apply-btn">
+        <a href="mailto:hr@smarthubc.com?subject=Application: Administrative Assistant" class="btn-teal">Apply Now</a>
+      </div>
+    </div>
+
+    <!-- Event Planner -->
+    <div class="job-card reveal">
+      <div>
+        <div class="job-tag">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
+          Part-time · Wan Chai
+        </div>
+        <h3>Event Planner</h3>
+        <div class="job-section-title">Key Responsibilities</div>
+        <ul class="job-list">
+          <li>Plan exclusive events that connect our clients and high net worth individuals</li>
+          <li>Reach out to guests across diverse industries for sharing sessions</li>
+        </ul>
+        <div class="job-section-title">Requirements</div>
+        <ul class="job-list">
+          <li>Currently enrolled in a full-time undergraduate program</li>
+          <li>Strong organizational and multitasking skills</li>
+          <li>Prior experience in organizing events</li>
+        </ul>
+      </div>
+      <div class="job-apply-btn">
+        <a href="mailto:hr@smarthubc.com?subject=Application: Event Planner" class="btn-teal">Apply Now</a>
+      </div>
+    </div>
+
+    <!-- Editor -->
+    <div class="job-card reveal">
+      <div>
+        <div class="job-tag">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
+          Part-time · Wan Chai
+        </div>
+        <h3>Editor</h3>
+        <div class="job-section-title">Key Responsibilities</div>
+        <ul class="job-list">
+          <li>Conduct in-depth research on global news, financial markets, and emerging trends</li>
+          <li>Craft insightful newsletters tailored to our customers' interests and needs</li>
+        </ul>
+        <div class="job-section-title">Requirements</div>
+        <ul class="job-list">
+          <li>Currently enrolled in a full-time undergraduate program</li>
+          <li>Exceptional grammar and writing skills in English</li>
+        </ul>
+      </div>
+      <div class="job-apply-btn">
+        <a href="mailto:hr@smarthubc.com?subject=Application: Editor" class="btn-teal">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="apply-section">
+  <div class="container">
+    <div class="apply-card reveal">
+      <div class="section-label">Apply Online</div>
+      <h2>Send Us Your Application</h2>
+      <p>To apply for any of these positions, please send your resume and a cover letter (optional) detailing your interest and qualifications. You can also email us directly at <a href="mailto:hr@smarthubc.com" style="color:var(--teal);">hr@smarthubc.com</a>.</p>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-input" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="form-input" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Position Applying For</label>
+          <select class="form-input" style="-webkit-appearance:none;">
+            <option value="">Select a position...</option>
+            <option>Administrative Assistant</option>
+            <option>Event Planner</option>
+            <option>Editor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cover Letter / Message (optional)</label>
+          <textarea class="form-textarea" placeholder="Tell us about yourself, your interests, and why you'd like to join SmartHub Connect..."></textarea>
+        </div>
+        <button type="submit" class="btn-teal">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SmartHub Connect</h3>
+        <p>A staff-owned, genuinely independent single-family office based in Hong Kong.</p>
+        <address><div>25/F, 88 Lockhart Road, Wan Chai, Hong Kong</div><div>Tel: (+852) 2383 3283</div><div>Email: info@smarthubc.com</div></address>
+      </div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="join-us.html">Join Us</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html">Company Incorporation</a><a href="services.html">M&amp;A Services</a><a href="services.html">Secretarial &amp; Compliance</a><a href="services.html">Accounting</a><a href="services.html">Virtual Office</a></div>
+      <div class="footer-col"><h4>More</h4><a href="membership.html">Membership</a><a href="booking.html">Booking</a><a href="contact.html">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 SmartHub Connect Limited. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://wa.me/85255013516" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.29-1.243l-.307-.184-2.87.852.852-2.87-.184-.307A8 8 0 1112 20z"/></svg></a>
+        <a href="#" aria-label="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/><path d="M23.96 14.418c0-3.29-3.165-5.96-7.069-5.96-3.903 0-7.07 2.67-7.07 5.96 0 3.29 3.167 5.96 7.07 5.96a8.3 8.3 0 002.318-.33.7.7 0 01.583.08l1.546.906a.265.265 0 00.136.044c.13 0 .236-.108.236-.24a.408.408 0 00-.039-.174l-.317-1.204a.48.48 0 01.173-.54c1.49-1.096 2.433-2.714 2.433-4.502zm-9.585-1.062a.96.96 0 01-.946-.963c0-.532.423-.963.946-.963.522 0 .946.431.946.963a.96.96 0 01-.946.963zm5.032 0a.96.96 0 01-.946-.963c0-.532.424-.963.946-.963.523 0 .946.431.946.963a.96.96 0 01-.946.963z"/></svg></a>
+        <a href="mailto:info@smarthubc.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>

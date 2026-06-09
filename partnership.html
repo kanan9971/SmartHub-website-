@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partnership | SmartHub Connect</title>
+<meta name="description" content="Partner with SmartHub Connect — two ways to collaborate, FAQ, and partnership application form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.partner-types { padding: var(--section-pad) 0; }
+.partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.partner-card {
+  border-radius: 20px; padding: clamp(36px,4vw,52px);
+  border: 1px solid var(--warm-gray); transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.partner-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,181,173,0.10); }
+.partner-card-num {
+  font-family: var(--font-display); font-size: 64px;
+  font-weight: 700; color: var(--teal-pale);
+  line-height: 1; margin-bottom: 20px; transition: color 0.3s;
+}
+.partner-card:hover .partner-card-num { color: var(--teal); }
+.partner-card h3 {
+  font-family: var(--font-display); font-size: 22px;
+  font-weight: 600; color: var(--navy); margin-bottom: 16px;
+}
+.partner-card p { font-size: 15px; color: var(--text-light); line-height: 1.75; margin-bottom: 12px; }
+.partner-card .section-label { margin-bottom: 8px; }
+
+.why-partner { padding: var(--section-pad) 0; background: var(--off-white); }
+.why-partner-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.wp-card {
+  text-align: center; padding: 36px 20px;
+  background: var(--white); border-radius: var(--radius);
+  border: 1px solid transparent; transition: all 0.3s;
+}
+.wp-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,181,173,0.10); }
+.wp-icon {
+  width: 56px; height: 56px; margin: 0 auto 16px;
+  border-radius: 50%; background: var(--teal-pale);
+  display: flex; align-items: center; justify-content: center;
+}
+.wp-icon svg { width: 24px; height: 24px; color: var(--teal); }
+.wp-card h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--navy); }
+
+/* PARTNER FORM */
+.partner-form-section { padding: var(--section-pad) 0; }
+.partner-form-card {
+  background: var(--teal); border-radius: 20px;
+  padding: clamp(40px,5vw,64px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+  position: relative; overflow: hidden;
+}
+.partner-form-card::before {
+  content: ''; position: absolute; right: -100px; bottom: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+}
+.partner-form-info { position: relative; z-index: 1; }
+.partner-form-info .section-label { color: var(--gold); }
+.partner-form-info h2 {
+  font-family: var(--font-display); font-size: clamp(26px,3vw,36px);
+  font-weight: 600; color: var(--white); margin-bottom: 20px; line-height: 1.25;
+}
+.partner-form-info p { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.7; }
+.partner-form-body { position: relative; z-index: 1; }
+.partner-form-body .form-input {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  color: var(--white);
+}
+.partner-form-body .form-input::placeholder { color: rgba(255,255,255,0.5); }
+.partner-form-body .form-input:focus { border-color: var(--gold); }
+.partner-form-body label { color: rgba(255,255,255,0.85); }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); color: var(--teal-deep);
+  font-weight: 600; font-size: 15px;
+  padding: 14px 32px; border-radius: 30px;
+  transition: all 0.3s;
+}
+.btn-white:hover { background: var(--off-white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+/* FAQ */
+.faq-section { padding: var(--section-pad) 0; background: var(--off-white); }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--warm-gray);
+  overflow: hidden;
+}
+.faq-item:first-child { border-top: 1px solid var(--warm-gray); }
+.faq-question {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; cursor: pointer;
+  font-size: 16px; font-weight: 500; color: var(--navy);
+  gap: 16px; transition: color 0.3s;
+}
+.faq-question:hover { color: var(--teal); }
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-pale); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.3s;
+}
+.faq-icon svg { width: 14px; height: 14px; color: var(--teal); transition: transform 0.3s; }
+.faq-item.open .faq-icon { background: var(--teal); }
+.faq-item.open .faq-icon svg { color: var(--white); transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.faq-answer-inner { padding: 0 0 22px; font-size: 15px; color: var(--text-light); line-height: 1.75; }
+.faq-item.open .faq-answer { max-height: 300px; }
+
+@media (max-width: 900px) {
+  .why-partner-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .partner-grid { grid-template-columns: 1fr; }
+  .partner-form-card { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 500px) {
+  .why-partner-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav-interior" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="SmartHub Connect" class="nav-logo-mark">
+      <div class="nav-logo-text">SmartHub Connect<span>Single-Family Office</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="partnership.html" class="active">Partnership</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">EN | 繁體</div>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-close" id="mobileClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="membership.html">Membership</a><a href="booking.html">Booking</a>
+  <a href="contact.html" style="background:var(--red); margin-top:8px;">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-hero-label">Collaboration</div>
+      <h1>Partner With Us</h1>
+      <p>We believe in the power of collaboration to create exceptional value for our clients. We're always looking for strategic partners who share our commitment to excellence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TWO WAYS TO PARTNER -->
+<section class="partner-types">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">How We Collaborate</div>
+      <h2 class="reveal reveal-delay-1">Two Ways to Partner with Us</h2>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-card reveal">
+        <div class="section-label">Type 1</div>
+        <div class="partner-card-num">01</div>
+        <h3>You Provide Service to Us &amp; Our Network</h3>
+        <p>We are looking for investment, technology, accounting, legal, compliance, and educational service providers to enhance our portfolio and business performance. We also allow businesses to list their properties on our website.</p>
+        <p>If you are a top-tier service provider, let's talk. You provide the expertise. We provide the network.</p>
+      </div>
+      <div class="partner-card reveal reveal-delay-1">
+        <div class="section-label">Type 2</div>
+        <div class="partner-card-num">02</div>
+        <h3>We Help You Grow Your Business (As Your Company Secretary)</h3>
+        <p>We hold a TCSP license (Trust or Company Service Provider). That means we can act as your company secretary, handling compliance, filings, statutory records, and governance.</p>
+        <p>Let us take care of the paperwork while you focus on growing your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER WITH US -->
+<section class="why-partner">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Our Strengths</div>
+      <h2 class="reveal reveal-delay-1">Why Partner with Us</h2>
+    </div>
+    <div class="why-partner-grid">
+      <div class="wp-card reveal">
+        <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Expertise</h3>
+      </div>
+      <div class="wp-card reveal reveal-delay-1">
+        <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Independence</h3>
+      </div>
+      <div class="wp-card reveal reveal-delay-2">
+        <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Client-Centric</h3>
+      </div>
+      <div class="wp-card reveal reveal-delay-3">
+        <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Innovation</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER FORM -->
+<section class="partner-form-section">
+  <div class="container">
+    <div class="partner-form-card reveal">
+      <div class="partner-form-info">
+        <div class="section-label">Get In Touch</div>
+        <h2>Ready to Partner with SmartHub?</h2>
+        <p>Fill in the form and our team will reach out to discuss how we can collaborate to create value for both of us and our networks.</p>
+      </div>
+      <div class="partner-form-body">
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-input" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" class="form-input" placeholder="+852 XXXX XXXX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-input" placeholder="your@company.com">
+            </div>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" class="form-input" placeholder="Your company">
+            </div>
+          </div>
+          <button type="submit" class="btn-white">
+            Send Partnership Request
+            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Questions &amp; Answers</div>
+      <h2 class="reveal reveal-delay-1">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-question">
+          How can we collaborate with you?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">We are looking for investment, technological, accounting and educational services to increase our customers' experience. We also allow businesses to list their properties on our website.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Do I need to be based in Hong Kong to partner with you?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">No, we collaborate with companies all over the world. Our network spans multiple regions, and we welcome international partners who share our commitment to excellence.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          How do I apply to become a partner?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Use the partnership form above to contact us. Our team will review your submission and reach out within 3-5 business days to discuss next steps.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What is the cost of setting up an office in HK?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Our set up cost can be as low as USD$1,000, which includes business registration certification, professional fees, and government incorporation fees. Exact costs depend on the company structure and services required.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What other benefits does your company provide?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">We can help with M&A listing. We also have part-time staff available for short-term needs such as marketing, so your partnership can scale flexibly as your needs change.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What is the fee for renting properties on your website?
+          <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">10% of each transaction. This covers the listing, promotion within our network, and transaction support.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SmartHub Connect</h3>
+        <p>A staff-owned, genuinely independent single-family office based in Hong Kong.</p>
+        <address><div>25/F, 88 Lockhart Road, Wan Chai, Hong Kong</div><div>Tel: (+852) 2383 3283</div><div>Email: info@smarthubc.com</div></address>
+      </div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="join-us.html">Join Us</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html">Company Incorporation</a><a href="services.html">M&amp;A Services</a><a href="services.html">Secretarial &amp; Compliance</a><a href="services.html">Accounting</a><a href="services.html">Virtual Office</a></div>
+      <div class="footer-col"><h4>More</h4><a href="membership.html">Membership</a><a href="booking.html">Booking</a><a href="contact.html">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 SmartHub Connect Limited. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://wa.me/85255013516" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.29-1.243l-.307-.184-2.87.852.852-2.87-.184-.307A8 8 0 1112 20z"/></svg></a>
+        <a href="#" aria-label="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/><path d="M23.96 14.418c0-3.29-3.165-5.96-7.069-5.96-3.903 0-7.07 2.67-7.07 5.96 0 3.29 3.167 5.96 7.07 5.96a8.3 8.3 0 002.318-.33.7.7 0 01.583.08l1.546.906a.265.265 0 00.136.044c.13 0 .236-.108.236-.24a.408.408 0 00-.039-.174l-.317-1.204a.48.48 0 01.173-.54c1.49-1.096 2.433-2.714 2.433-4.502zm-9.585-1.062a.96.96 0 01-.946-.963c0-.532.423-.963.946-.963.522 0 .946.431.946.963a.96.96 0 01-.946.963zm5.032 0a.96.96 0 01-.946-.963c0-.532.424-.963.946-.963.523 0 .946.431.946.963a.96.96 0 01-.946.963z"/></svg></a>
+        <a href="mailto:info@smarthubc.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
