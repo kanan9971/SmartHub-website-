@@ -13,63 +13,80 @@
 <style>
 /* HOME-SPECIFIC STYLES */
 .hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  position: relative; overflow: hidden;
-  background: var(--navy-deep);
+  margin-top: 86px;
+  height: calc(100vh - 86px);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #d8d0c8;
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background:
-    linear-gradient(145deg, rgba(20,143,138,0.95) 0%, rgba(26,181,173,0.88) 50%, rgba(44,196,188,0.80) 100%),
-    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,0.05) 40px, rgba(255,255,255,0.05) 41px),
-    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,0.05) 40px, rgba(255,255,255,0.05) 41px);
-  background-color: var(--teal);
+  background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=80');
+  background-size: cover;
+  background-position: center top;
 }
 .hero-bg::after {
   content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 200px;
-  background: linear-gradient(to top, var(--white), transparent);
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.12);
 }
-.hero-accent {
-  position: absolute; right: -200px; top: -200px;
-  width: 800px; height: 800px;
-  border-radius: 50%; border: 1px solid rgba(255,255,255,0.18);
-}
-.hero-accent-2 {
-  position: absolute; right: -150px; top: -150px;
-  width: 700px; height: 700px;
-  border-radius: 50%; border: 1px solid rgba(255,255,255,0.10);
-}
+.hero-accent, .hero-accent-2 { display: none; }
 .hero-content {
-  position: relative; z-index: 2;
-  max-width: 720px; padding-top: 120px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-max);
+  padding: 0 clamp(20px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.28);
-  padding: 8px 18px; border-radius: 30px;
-  margin-bottom: 28px; font-size: 13px;
-  color: rgba(255,255,255,0.95); font-weight: 500; letter-spacing: 0.5px;
-}
-.hero-badge-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
-}
-.hero h1 {
+.hero-text-left {
   font-family: var(--font-display);
-  font-size: clamp(38px, 5.5vw, 64px);
-  font-weight: 600; color: var(--white);
-  line-height: 1.15; margin-bottom: 24px;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.5);
 }
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero-sub {
-  font-size: clamp(16px, 1.8vw, 19px);
-  color: rgba(255,255,255,0.7); line-height: 1.7;
-  margin-bottom: 40px; max-width: 560px;
+.hero-text-right {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.2;
+  text-align: right;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.5);
 }
-.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.hero-center-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-hero:hover { background: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(20,143,138,0.3); }
+@media (max-width: 700px) {
+  .hero-content { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
+  .hero-text-right { text-align: center; }
+}
 
 /* INTRO */
 .intro { padding: var(--section-pad) 0; }
@@ -91,28 +108,67 @@
 .intro-image { aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; }
 
 /* SERVICES SECTION */
-.services { padding: var(--section-pad) 0; background: var(--off-white); }
-.services-grid {
+.services { padding: var(--section-pad) 0; background: var(--white); }
+.what-we-do-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
 }
-.service-chip {
-  background: var(--white); padding: 20px 24px;
-  border-radius: var(--radius-sm); font-size: 15px; font-weight: 500;
-  color: var(--navy); display: flex; align-items: center; gap: 12px;
-  transition: all 0.3s; border: 1px solid transparent; cursor: default;
+.what-we-do-image {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
 }
-.service-chip:hover {
-  border-color: var(--teal); transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(26,181,173,0.12);
+.what-we-do-right { padding-top: 8px; }
+.what-we-do-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 600;
+  color: var(--teal-deep);
+  margin-bottom: 24px;
 }
-.service-chip-icon {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: var(--blue-pale);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+.accordion { display: flex; flex-direction: column; gap: 0; }
+.accordion-item {
+  border: 1px solid #ddd;
+  margin-bottom: -1px;
+  position: relative;
 }
-.service-chip-icon svg { width: 18px; height: 18px; color: var(--blue); }
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #1a1a1a;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  transition: background 0.2s;
+}
+.accordion-item.open .accordion-trigger {
+  background: var(--white);
+  color: var(--text);
+  border-bottom: 1px solid #eee;
+}
+.accordion-trigger svg { flex-shrink: 0; transition: transform 0.3s; }
+.accordion-item.open .accordion-trigger svg { transform: rotate(180deg); }
+.accordion-body {
+  display: none;
+  padding: 20px;
+  background: var(--white);
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.accordion-item.open .accordion-body { display: block; }
+@media (max-width: 768px) {
+  .what-we-do-grid { grid-template-columns: 1fr; }
+}
 
 /* BUSINESS CENTER */
 .biz-center { padding: var(--section-pad) 0; }
@@ -151,7 +207,7 @@
 }
 .biz-services-list li::before {
   content: ''; width: 6px; height: 6px;
-  border-radius: 50%; background: var(--gold); flex-shrink: 0;
+  border-radius: 50%; background: var(--teal-bright); flex-shrink: 0;
 }
 .biz-image { position: relative; z-index: 1; aspect-ratio: 1; border-radius: 16px; overflow: hidden; }
 
@@ -256,24 +312,32 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="SmartHub Connect" class="nav-logo-mark">
-      <div class="nav-logo-text">SmartHub Connect<span>Single-Family Office</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="partnership.html">Partnership</a></li>
-      <li><a href="membership.html">Membership</a></li>
-      <li><a href="booking.html">Booking</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-toggle">EN | 繁體</div>
-      <a href="contact.html" class="nav-cta">Contact Us</a>
-      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="nav-contact-bar">
+    <div class="nav-contact-bar-inner">
+      <span>Tel: +852 2383 3283</span>
+      <span>Email: info@smarthubc.com</span>
+      <span>WhatsApp: +852 5501 3516</span>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="smarthub-logo.png" alt="SmartHub Connect" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">EN | 繁體</div>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+        <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
     </div>
   </div>
 </nav>
@@ -298,20 +362,12 @@
   <div class="hero-bg"></div>
   <div class="hero-accent"></div>
   <div class="hero-accent-2"></div>
-  <div class="container hero-content">
-    <div class="hero-badge reveal">
-      <div class="hero-badge-dot"></div>
-      Hong Kong Based · Independent · Staff-Owned
+  <div class="hero-content reveal">
+    <div class="hero-text-left">Single-family office</div>
+    <div class="hero-center-cta">
+      <a href="services.html" class="btn-hero">More Info</a>
     </div>
-    <h1 class="reveal reveal-delay-1">A Single-Family Office <em>Built on Trust</em></h1>
-    <p class="hero-sub reveal reveal-delay-2">We manage our own capital with 40 years of investment experience. No external funding. No outside clients. No conflicts of interest — just genuinely independent wealth management.</p>
-    <div class="hero-actions reveal reveal-delay-3">
-      <a href="services.html" class="btn-primary">
-        Explore Our Services
-        <span class="btn-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
-      <a href="about.html" class="btn-outline">Learn More About Us</a>
-    </div>
+    <div class="hero-text-right">in Hong Kong</div>
   </div>
 </section>
 
@@ -366,43 +422,65 @@
 <!-- SERVICES -->
 <section class="services">
   <div class="container">
-    <div class="section-header">
-      <div class="section-label reveal">What We Offer</div>
-      <h2 class="reveal reveal-delay-1">Our Family Office Services</h2>
-      <p class="reveal reveal-delay-2">Comprehensive wealth management built on decades of experience and a commitment to doing what's right.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-chip reveal">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Financial Advice
+    <div class="what-we-do-grid">
+      <div class="what-we-do-image reveal">
+        <div class="img-placeholder" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=900&q=80'); background-size: cover; background-position: center; opacity: 1; flex-direction: column; justify-content: flex-end; padding: 24px;">
+          <span style="color: white; font-size: 32px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">Future</span>
+        </div>
       </div>
-      <div class="service-chip reveal reveal-delay-1">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Investment Management
-      </div>
-      <div class="service-chip reveal reveal-delay-2">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Trading
-      </div>
-      <div class="service-chip reveal reveal-delay-3">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Tax-Efficient Structuring
-      </div>
-      <div class="service-chip reveal reveal-delay-1">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Flexible Investment Style
-      </div>
-      <div class="service-chip reveal reveal-delay-2">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Execution &amp; Custody
-      </div>
-      <div class="service-chip reveal reveal-delay-3">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Legislation Monitoring
-      </div>
-      <div class="service-chip reveal reveal-delay-4">
-        <div class="service-chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Unconflicted &amp; Unbiased
+      <div class="what-we-do-right reveal reveal-delay-1">
+        <h2 class="what-we-do-title">What we do</h2>
+        <div class="accordion" id="servicesAccordion">
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="acc-1">
+              Financial Advice
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion-body" id="acc-1">
+              We provide independent financial advice with no conflicts of interest. Our team draws on 40+ years of experience across wealth management, private banking, and hedge funds to give you genuinely unbiased guidance.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="acc-2">
+              Investment Management
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion-body" id="acc-2">
+              Our private clients are able to benefit from institutional quality investment management, enabling them to have all of their investments under one roof — equities, fixed income, alternatives, and more.
+            </div>
+          </div>
+          <div class="accordion-item open">
+            <button class="accordion-trigger" data-target="acc-3">
+              Trading
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion-body" id="acc-3">
+              <p>Some of our clients also use our execution only trading and custody service, enabling them to have all of their investments under one roof.</p>
+              <br>
+              <p>Our traders work on behalf of various hedge funds and family offices.</p>
+              <br>
+              <p>Our private clients are able to benefit from institutional quality settlement and custody.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="acc-4">
+              Tax-Efficient Structuring
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion-body" id="acc-4">
+              We work with leading tax advisers to structure your investments and holdings in the most tax-efficient way, ensuring your wealth is preserved across generations.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" data-target="acc-5">
+              Execution &amp; Custody
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="accordion-body" id="acc-5">
+              Institutional-grade execution and custody services, giving you best-in-class settlement, reporting, and safekeeping for all asset classes.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -429,7 +507,7 @@
         </a>
       </div>
       <div class="biz-image">
-        <div class="img-placeholder" style="background-color: rgba(26,181,173,0.06);">
+        <div class="img-placeholder" style="background-color: rgba(26,181,173,0.06); background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(26,181,173,0.05) 10px, rgba(26,181,173,0.05) 11px);">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(26,181,173,0.45)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
           <span style="color:rgba(26,181,173,0.5);">Business center photo</span>
         </div>
@@ -591,6 +669,15 @@ document.querySelectorAll('.check-item').forEach(item => {
     box.style.background = isChecked ? 'transparent' : 'var(--navy)';
     box.style.borderColor = isChecked ? 'var(--gray-300)' : 'var(--navy)';
     box.innerHTML = isChecked ? '' : '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  });
+});
+
+document.querySelectorAll('.accordion-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.accordion-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
   });
 });
 </script>
