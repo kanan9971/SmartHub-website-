@@ -226,9 +226,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   border-radius: 50%; border: 1px solid rgba(255,255,255,0.08);
 }
 .page-hero-label {
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 16px;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: #F5C842; margin-bottom: 16px;
 }
 .page-hero h1 {
   font-family: var(--font-display);
@@ -255,8 +255,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .section-header p { font-size: 17px; color: var(--text-light); }
 .section-label {
-  display: inline-block; font-size: 12px; font-weight: 600;
-  letter-spacing: 2px; text-transform: uppercase;
+  display: inline-block; font-size: 13px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--teal); margin-bottom: 16px;
 }
 
