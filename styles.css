@@ -151,9 +151,18 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-size: 15px; color: var(--gray-700);
   background: var(--warm-gray);
   padding: 8px 16px; border-radius: 20px;
-  transition: all 0.3s; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  user-select: none;
 }
-.lang-toggle:hover { background: var(--gray-300); }
+.lang-btn {
+  cursor: pointer; transition: color 0.2s; font-weight: 500;
+}
+.lang-btn:hover { color: var(--teal); }
+.lang-btn.active { color: var(--teal); font-weight: 700; }
+
+/* Language visibility */
+html[data-lang="zh"] .en-only { display: none !important; }
+html:not([data-lang="zh"]) .zh-only { display: none !important; }
 .nav-cta {
   font-size: 15px; font-weight: 600;
   color: var(--white); background: var(--red);
@@ -228,7 +237,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .page-hero-label {
   font-size: 14px; font-weight: 700;
   letter-spacing: 2.5px; text-transform: uppercase;
-  color: #F5C842; margin-bottom: 16px;
+  color: #E2B858; margin-bottom: 16px;
 }
 .page-hero h1 {
   font-family: var(--font-display);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,7 @@
   background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
 }
 .partner-form-info { position: relative; z-index: 1; }
-.partner-form-info .section-label { color: #F5C842; font-size: 14px; }
+.partner-form-info .section-label { color: #E2B858; font-size: 14px; }
 .partner-form-info h2 {
   font-family: var(--font-display); font-size: clamp(26px,3vw,36px);
   font-weight: 600; color: var(--white); margin-bottom: 20px; line-height: 1.25;
@@ -153,7 +153,7 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
       <div class="nav-right">
-      <div class="lang-toggle">EN | 繁體</div>
+      <div class="lang-toggle"><span class="lang-btn active" data-lang="en">EN</span> | <span class="lang-btn" data-lang="zh">繁體</span></div>
       <a href="contact.html" class="nav-cta">Contact Us</a>
       <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
@@ -171,9 +171,9 @@
 <section class="page-hero" style="background-image: linear-gradient(135deg, rgba(20,143,138,0.88), rgba(10,40,70,0.85)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1800&q=80'); background-size:cover; background-position:center;">
   <div class="container">
     <div class="page-hero-content">
-      <div class="page-hero-label">Collaboration</div>
-      <h1>Partner With Us</h1>
-      <p>We believe in the power of collaboration to create exceptional value for our clients. We're always looking for strategic partners who share our commitment to excellence.</p>
+      <div class="page-hero-label"><span class="en-only">Collaboration</span><span class="zh-only">戰略合作</span></div>
+      <h1><span class="en-only">Partner With Us</span><span class="zh-only">與我們攜手合作</span></h1>
+      <p><span class="en-only">We believe in the power of collaboration to create exceptional value for our clients. We're always looking for strategic partners who share our commitment to excellence.</span><span class="zh-only">我們深信協同合作的力量能為我們的客戶創造卓越不凡的價值。我們始終在尋找與我們一樣致力於追求極致卓越的戰略合作夥伴。</span></p>
     </div>
   </div>
 </section>
@@ -182,23 +182,23 @@
 <section class="partner-types">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">How We Collaborate</div>
-      <h2 class="reveal reveal-delay-1">Two Ways to Partner with Us</h2>
+      <div class="section-label reveal"><span class="en-only">How We Collaborate</span><span class="zh-only">合作模式</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Two Ways to Partner with Us</span><span class="zh-only">兩種戰略合作模式</span></h2>
     </div>
     <div class="partner-grid">
       <div class="partner-card reveal">
-        <div class="section-label">Type 1</div>
+        <div class="section-label"><span class="en-only">Type 1</span><span class="zh-only">模式一</span></div>
         <div class="partner-card-num">01</div>
-        <h3>You Provide Service to Us &amp; Our Network</h3>
-        <p>We are looking for investment, technology, accounting, legal, compliance, and educational service providers to enhance our portfolio and business performance. We also allow businesses to list their properties on our website.</p>
-        <p>If you are a top-tier service provider, let's talk. You provide the expertise. We provide the network.</p>
+        <h3><span class="en-only">You Provide Service to Us &amp; Our Network</span><span class="zh-only">您為我們及我們的商務網絡提供服務</span></h3>
+        <p><span class="en-only">We are looking for investment, technology, accounting, legal, compliance, and educational service providers to enhance our portfolio and business performance. We also allow businesses to list their properties on our website.</span><span class="zh-only">我們正積極尋找投資、技術、會計、法律、合規及教育等領域的頂尖服務提供商，以持續優化我們的投資組合與業務績效。</span></p>
+        <p><span class="en-only">If you are a top-tier service provider, let's talk. You provide the expertise. We provide the network.</span><span class="zh-only">如果您是業內頂尖的服務提供商，歡迎與我們展開深度對話。您提供專業知識，我們為您對接強大的精英網絡。</span></p>
       </div>
       <div class="partner-card reveal reveal-delay-1">
-        <div class="section-label">Type 2</div>
+        <div class="section-label"><span class="en-only">Type 2</span><span class="zh-only">模式二</span></div>
         <div class="partner-card-num">02</div>
-        <h3>We Help You Grow Your Business (As Your Company Secretary)</h3>
-        <p>We hold a TCSP license (Trust or Company Service Provider). That means we can act as your company secretary, handling compliance, filings, statutory records, and governance.</p>
-        <p>Let us take care of the paperwork while you focus on growing your business.</p>
+        <h3><span class="en-only">We Help You Grow Your Business (As Your Company Secretary)</span><span class="zh-only">我們協助您發展業務（擔任您的公司秘書）</span></h3>
+        <p><span class="en-only">We hold a TCSP license (Trust or Company Service Provider). That means we can act as your company secretary, handling compliance, filings, statutory records, and governance.</span><span class="zh-only">我們本身持有TCSP牌照（信託或公司服務提供者）。這意味著我們完全具備法定資格擔任您的公司秘書，全權負責合規審查、法定申報、法定記錄維護及公司治理。</span></p>
+        <p><span class="en-only">Let us take care of the paperwork while you focus on growing your business.</span><span class="zh-only">由我們來為您處理所有繁瑣的文書與合規工作，讓您全神貫注於業務的擴張與發展。</span></p>
       </div>
     </div>
   </div>
@@ -208,25 +208,25 @@
 <section class="why-partner">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Our Strengths</div>
-      <h2 class="reveal reveal-delay-1">Why Partner with Us</h2>
+      <div class="section-label reveal"><span class="en-only">Our Strengths</span><span class="zh-only">我們的實力</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Why Partner with Us</span><span class="zh-only">為什麼與我們合作</span></h2>
     </div>
     <div class="why-partner-grid">
       <div class="wp-card reveal">
         <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Expertise</h3>
+        <h3><span class="en-only">Expertise</span><span class="zh-only">頂尖專業知識</span></h3>
       </div>
       <div class="wp-card reveal reveal-delay-1">
         <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Independence</h3>
+        <h3><span class="en-only">Independence</span><span class="zh-only">絕對的獨立性</span></h3>
       </div>
       <div class="wp-card reveal reveal-delay-2">
         <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Client-Centric</h3>
+        <h3><span class="en-only">Client-Centric</span><span class="zh-only">以客戶為中心</span></h3>
       </div>
       <div class="wp-card reveal reveal-delay-3">
         <div class="wp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Innovation</h3>
+        <h3><span class="en-only">Innovation</span><span class="zh-only">持續創新</span></h3>
       </div>
     </div>
   </div>
@@ -237,9 +237,9 @@
   <div class="container">
     <div class="partner-form-card reveal">
       <div class="partner-form-info">
-        <div class="section-label">Get In Touch</div>
-        <h2>Ready to Partner with SmartHub?</h2>
-        <p>Fill in the form and our team will reach out to discuss how we can collaborate to create value for both of us and our networks.</p>
+        <div class="section-label"><span class="en-only">Get In Touch</span><span class="zh-only">立即聯繫</span></div>
+        <h2><span class="en-only">Ready to Partner with SmartHub?</span><span class="zh-only">準備好與潮地攜手合作了嗎？</span></h2>
+        <p><span class="en-only">Fill in the form and our team will reach out to discuss how we can collaborate to create value for both of us and our networks.</span><span class="zh-only">填寫下方表格，我們的團隊將主動聯繫您，探討如何共同創造價值。</span></p>
       </div>
       <div class="partner-form-body">
         <form onsubmit="return false;">
@@ -264,7 +264,7 @@
             </div>
           </div>
           <button type="submit" class="btn-white">
-            Send Partnership Request
+            <span class="en-only">Send Partnership Request</span><span class="zh-only">發送合作申請</span>
             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </form>
@@ -277,8 +277,8 @@
 <section class="faq-section">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Questions &amp; Answers</div>
-      <h2 class="reveal reveal-delay-1">Frequently Asked Questions</h2>
+      <div class="section-label reveal"><span class="en-only">Questions &amp; Answers</span><span class="zh-only">常見問答</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Frequently Asked Questions</span><span class="zh-only">常見問題解答</span></h2>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
@@ -370,5 +370,6 @@ document.querySelectorAll('.faq-question').forEach(q => {
   });
 });
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

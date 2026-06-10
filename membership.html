@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,7 +107,7 @@
   max-width: 600px; margin: 0 auto 36px; line-height: 1.75;
   position: relative; z-index: 1;
 }
-.member-cta-card .section-label { color: #F5C842; font-size: 14px; position: relative; z-index: 1; }
+.member-cta-card .section-label { color: #E2B858; font-size: 14px; position: relative; z-index: 1; }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
 
 @media (max-width: 900px) {
@@ -145,7 +145,7 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
       <div class="nav-right">
-      <div class="lang-toggle">EN | 繁體</div>
+      <div class="lang-toggle"><span class="lang-btn active" data-lang="en">EN</span> | <span class="lang-btn" data-lang="zh">繁體</span></div>
       <a href="contact.html" class="nav-cta">Contact Us</a>
       <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
@@ -163,9 +163,9 @@
 <section class="page-hero" style="background-image: linear-gradient(135deg, rgba(20,143,138,0.88), rgba(10,40,70,0.85)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=80'); background-size:cover; background-position:center;">
   <div class="container">
     <div class="page-hero-content">
-      <div class="page-hero-label">Become a Member</div>
-      <h1>Tailored Membership Tiers</h1>
-      <p>We provide tailored business centre solutions designed to support entrepreneurs, startups, and global firms. Our membership tiers are built to match your operational needs and growth ambitions.</p>
+      <div class="page-hero-label"><span class="en-only">Become a Member</span><span class="zh-only">成為會員</span></div>
+      <h1><span class="en-only">Tailored Membership Tiers</span><span class="zh-only">度身定制的會員級別</span></h1>
+      <p><span class="en-only">We provide tailored business centre solutions designed to support entrepreneurs, startups, and global firms. Our membership tiers are built to match your operational needs and growth ambitions.</span><span class="zh-only">我們提供量身定制的頂級商務中心解決方案，旨在全力支持創業家、初創公司及全球跨國企業。我們所構建的會員級別，能完美契合您的營運需求與擴張雄心。</span></p>
     </div>
   </div>
 </section>
@@ -174,29 +174,29 @@
 <section class="pricing">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Plans &amp; Pricing</div>
-      <h2 class="reveal reveal-delay-1">Choose Your Membership Tier</h2>
-      <p class="reveal reveal-delay-2">All memberships include access to our professional business centre and dedicated support team.</p>
+      <div class="section-label reveal"><span class="en-only">Plans &amp; Pricing</span><span class="zh-only">方案與定價</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Choose Your Membership Tier</span><span class="zh-only">選擇您的會員級別</span></h2>
+      <p class="reveal reveal-delay-2"><span class="en-only">All memberships include access to our professional business centre and dedicated support team.</span><span class="zh-only">所有會員均可使用我們的專業商務中心及專屬支援團隊。</span></p>
     </div>
     <div class="pricing-grid">
       <!-- Silver -->
       <div class="pricing-card reveal">
-        <div class="tier-name">Silver</div>
+        <div class="tier-name"><span class="en-only">Silver</span><span class="zh-only">白銀級</span></div>
         <div class="price">HK$3,000</div>
-        <div class="price-period">per month</div>
+        <div class="price-period"><span class="en-only">per month</span><span class="zh-only">每月</span></div>
         <div class="pricing-divider"></div>
         <ul class="feature-list">
-          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Monthly market insight newsletter</li>
-          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Access to fundamental services</li>
-          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Use of secure WiFi, printer, scanner &amp; photocopiers</li>
-          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Networking events</li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="en-only">Monthly market insight newsletter</span><span class="zh-only">每月定期獲贈市場深度洞察通訊</span></li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="en-only">Access to fundamental services</span><span class="zh-only">獲取商務中心基礎服務</span></li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="en-only">Use of secure WiFi, printer, scanner &amp; photocopiers</span><span class="zh-only">免費使用安全WiFi、高效能列印、掃描及影印設備</span></li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="en-only">Networking events</span><span class="zh-only">受邀參與商業社交網絡活動</span></li>
         </ul>
-        <a href="contact.html" class="btn-plan">Get Started</a>
+        <a href="contact.html" class="btn-plan"><span class="en-only">Get Started</span><span class="zh-only">立即開始</span></a>
       </div>
       <!-- Gold (featured) -->
       <div class="pricing-card featured reveal reveal-delay-1">
-        <div class="featured-badge">Most Popular</div>
-        <div class="tier-name">Gold</div>
+        <div class="featured-badge"><span class="en-only">Most Popular</span><span class="zh-only">最受歡迎</span></div>
+        <div class="tier-name"><span class="en-only">Gold</span><span class="zh-only">黃金級</span></div>
         <div class="price">HK$10,000</div>
         <div class="price-period">per month</div>
         <div class="pricing-divider"></div>
@@ -211,7 +211,7 @@
       </div>
       <!-- Platinum -->
       <div class="pricing-card reveal reveal-delay-2">
-        <div class="tier-name">Platinum</div>
+        <div class="tier-name"><span class="en-only">Platinum</span><span class="zh-only">白金級</span></div>
         <div class="price">HK$50,000</div>
         <div class="price-period">per month</div>
         <div class="pricing-divider"></div>
@@ -231,30 +231,30 @@
 <section class="perks">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Member Benefits</div>
-      <h2 class="reveal reveal-delay-1">Membership Perks</h2>
+      <div class="section-label reveal"><span class="en-only">Member Benefits</span><span class="zh-only">會員專屬權益</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Membership Perks</span><span class="zh-only">會員專屬非凡權益</span></h2>
     </div>
     <div class="perks-grid">
       <div class="perk-card reveal">
         <div class="perk-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Business Centers</h3>
-        <p>Memberships give access to professional business centers where you can work, meet with clients, and hold interviews in a prestigious environment.</p>
+        <h3><span class="en-only">Business Centers</span><span class="zh-only">商務中心使用權</span></h3>
+        <p><span class="en-only">Memberships give access to professional business centers where you can work, meet with clients, and hold interviews in a prestigious environment.</span><span class="zh-only">會員資格讓您隨時進駐專業的高端商務中心，無論是日常辦公、會見核心客戶還是主持人才面試，皆能彰顯企業氣度。</span></p>
       </div>
       <div class="perk-card reveal reveal-delay-1">
         <div class="perk-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Office Services</h3>
-        <p>Premium office solutions — from workspaces to meeting rooms — designed to elevate your business presence and operational efficiency.</p>
+        <h3><span class="en-only">Office Services</span><span class="zh-only">高端辦公室服務</span></h3>
+        <p><span class="en-only">Premium office solutions — from workspaces to meeting rooms — designed to elevate your business presence and operational efficiency.</span><span class="zh-only">提供從行政工作空間到頂級會議室的優質辦公解決方案，旨在全方位提升您的企業形象與營運效率。</span></p>
       </div>
       <div class="perk-card reveal reveal-delay-2">
         <div class="perk-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Expert Support</h3>
-        <p>Enjoy ongoing guidance from our experienced team of advisors, ensuring your wealth is managed proactively and efficiently.</p>
+        <h3><span class="en-only">Expert Support</span><span class="zh-only">專家智庫支持</span></h3>
+        <p><span class="en-only">Enjoy ongoing guidance from our experienced team of advisors, ensuring your wealth is managed proactively and efficiently.</span><span class="zh-only">享受我們經驗豐富的顧問專家團隊提供的持續戰略指導，確保您的財富與業務得到主動且高效的管理。</span></p>
       </div>
     </div>
   </div>
@@ -265,14 +265,14 @@
   <div class="container">
     <div class="member-cta-card reveal">
       <div class="section-label">Connect with Us</div>
-      <h2>Build Your Future with SmartHub Connect</h2>
-      <p>Gain access to our exclusive network, enjoy concierge services, and choose from flexible membership tiers designed to meet your specific requirements. Where personalised business centre services meet global ambition.</p>
+      <h2><span class="en-only">Build Your Future with SmartHub Connect</span><span class="zh-only">與潮地有限公司攜手共築未來</span></h2>
+      <p><span class="en-only">Gain access to our exclusive network, enjoy concierge services, and choose from flexible membership tiers designed to meet your specific requirements. Where personalised business centre services meet global ambition.</span><span class="zh-only">即刻獲取進入我們專屬精英網絡的權限，享受全方位的商務禮賓服務。我們提供多款旨在滿足您特定戰略要求的靈活會員級別供您甄選。</span></p>
       <div class="cta-actions">
         <a href="contact.html" class="btn-gold">
-          Enquire About Membership
+          <span class="en-only">Enquire About Membership</span><span class="zh-only">查詢會員詳情</span>
           <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="booking.html" class="btn-outline">View Room Booking</a>
+        <a href="booking.html" class="btn-outline"><span class="en-only">View Room Booking</span><span class="zh-only">查看房間預訂</span></a>
       </div>
     </div>
   </div>
@@ -311,5 +311,6 @@ revealEls.forEach(el => observer.observe(el));
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

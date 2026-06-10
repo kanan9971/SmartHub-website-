@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +91,7 @@
   width: 600px; height: 600px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.12);
 }
-.slogan-section .section-label { color: #F5C842; margin-bottom: 20px; font-size: 14px; }
+.slogan-section .section-label { color: #E2B858; margin-bottom: 20px; font-size: 14px; }
 .slogan-section h2 {
   font-family: var(--font-display); font-size: clamp(28px,4vw,48px);
   font-weight: 600; color: var(--white); max-width: 720px;
@@ -140,7 +140,7 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
       <div class="nav-right">
-      <div class="lang-toggle">EN | 繁體</div>
+      <div class="lang-toggle"><span class="lang-btn active" data-lang="en">EN</span> | <span class="lang-btn" data-lang="zh">繁體</span></div>
       <a href="contact.html" class="nav-cta">Contact Us</a>
       <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
@@ -167,9 +167,9 @@
 <section class="page-hero" style="background-image: linear-gradient(135deg, rgba(20,143,138,0.88), rgba(10,40,70,0.85)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80'); background-size:cover; background-position:center;">
   <div class="container">
     <div class="page-hero-content">
-      <div class="page-hero-label">Our Story</div>
-      <h1>Understand Us More</h1>
-      <p>40 years of investment experience. A track record of successful returns and performance built on one principle — make money work for us, not the other way around.</p>
+      <div class="page-hero-label"><span class="en-only">Our Story</span><span class="zh-only">我們的故事</span></div>
+      <h1><span class="en-only">Understand Us More</span><span class="zh-only">了解我們</span></h1>
+      <p><span class="en-only">40 years of investment experience. A track record of successful returns and performance built on one principle — make money work for us, not the other way around.</span><span class="zh-only">深耕投資領域40年，擁有卓越的投資回報與績效記錄。秉持一個原則：讓金錢為我們服務，而非我們為金錢勞碌。</span></p>
     </div>
   </div>
 </section>
@@ -179,11 +179,11 @@
   <div class="container">
     <div class="about-intro-grid">
       <div>
-        <div class="section-label reveal">Our Foundation</div>
-        <h2 class="reveal reveal-delay-1">A Family Office Built for the Long Game</h2>
-        <p class="reveal reveal-delay-2">40 years of investment experience. A track record of successful returns and performance.</p>
-        <p class="reveal reveal-delay-3">One principle: make money work for us, not the other way around. Focus on succession. Focus on building a culture of sharing and collaboration.</p>
-        <p class="reveal reveal-delay-4">That's why we created SmartHub — a space where everyone is invited to hub together, collaborate, and build a network of sharing.</p>
+        <div class="section-label reveal"><span class="en-only">Our Foundation</span><span class="zh-only">我們的基石</span></div>
+        <h2 class="reveal reveal-delay-1"><span class="en-only">A Family Office Built for the Long Game</span><span class="zh-only">專為長遠利益而建的家族辦公室</span></h2>
+        <p class="reveal reveal-delay-2"><span class="en-only">40 years of investment experience. A track record of successful returns and performance.</span><span class="zh-only">深耕投資領域40年，擁有卓越的投資回報與績效記錄。</span></p>
+        <p class="reveal reveal-delay-3"><span class="en-only">One principle: make money work for us, not the other way around. Focus on succession. Focus on building a culture of sharing and collaboration.</span><span class="zh-only">秉持一個原則：讓金錢為我們服務，而非我們為金錢勞碌。專注於家族傳承，致力於構建一個倡導分享與協同效應的合作文化。</span></p>
+        <p class="reveal reveal-delay-4"><span class="en-only">That's why we created SmartHub — a space where everyone is invited to hub together, collaborate, and build a network of sharing.</span><span class="zh-only">這正是我們創立潮地的初衷——打造一個專屬空間，誠邀各方精英在此匯聚、攜手合作，共建資源共享網絡。</span></p>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="video-block" style="background-image: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)), url('https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=80'); background-size:cover; background-position:center; color:white;">
@@ -201,41 +201,41 @@
 <section class="what-we-believe">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Our Approach</div>
-      <h2 class="reveal reveal-delay-1">What We Believe</h2>
+      <div class="section-label reveal"><span class="en-only">Our Approach</span><span class="zh-only">我們的理念</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">What We Believe</span><span class="zh-only">我們的信念</span></h2>
     </div>
     <div class="believe-grid">
       <div class="believe-col reveal">
-        <div class="believe-col-label">As a Single-Family Office</div>
-        <h3>Managing Our Own Capital</h3>
+        <div class="believe-col-label"><span class="en-only">As a Single-Family Office</span><span class="zh-only">作為單一家族辦公室</span></div>
+        <h3><span class="en-only">Managing Our Own Capital</span><span class="zh-only">自主管理核心資本</span></h3>
         <ul class="believe-list">
-          <li>Invest our own capital</li>
-          <li>Serve no outside clients</li>
-          <li>No external funding</li>
-          <li>Focus on succession &amp; performance</li>
+          <li><span class="en-only">Invest our own capital</span><span class="zh-only">投資自身資本</span></li>
+          <li><span class="en-only">Serve no outside clients</span><span class="zh-only">不接待外部客戶</span></li>
+          <li><span class="en-only">No external funding</span><span class="zh-only">謝絕外部融資</span></li>
+          <li><span class="en-only">Focus on succession &amp; performance</span><span class="zh-only">專注家族傳承與績效表現</span></li>
         </ul>
       </div>
       <div class="believe-col reveal reveal-delay-1">
-        <div class="believe-col-label">Through SmartHub Business Center</div>
-        <h3>Supporting the Community</h3>
+        <div class="believe-col-label"><span class="en-only">Through SmartHub Business Center</span><span class="zh-only">透過潮地商務中心</span></div>
+        <h3><span class="en-only">Supporting the Community</span><span class="zh-only">支持社群發展</span></h3>
         <ul class="believe-list">
-          <li>Offer operational consultancy services</li>
-          <li>Serve businesses, startups, entrepreneurs, families</li>
-          <li>Platform for talent, business owners, employment</li>
-          <li>Consultancy for compliance &amp; risk management</li>
+          <li><span class="en-only">Offer operational consultancy services</span><span class="zh-only">提供專業營運顧問服務</span></li>
+          <li><span class="en-only">Serve businesses, startups, entrepreneurs, families</span><span class="zh-only">服務企業、初創公司、創業家及家族</span></li>
+          <li><span class="en-only">Platform for talent, business owners, employment</span><span class="zh-only">打造人才、企業主及就業的對接平台</span></li>
+          <li><span class="en-only">Consultancy for compliance &amp; risk management</span><span class="zh-only">提供合規與風險管理諮詢服務</span></li>
         </ul>
       </div>
     </div>
-    <p class="reveal" style="text-align:center; margin-top:40px; font-size:17px; color:var(--text-light); max-width:640px; margin-left:auto; margin-right:auto;">Our goal is simple: bring other single families together and foster a sharing culture.</p>
+    <p class="reveal" style="text-align:center; margin-top:40px; font-size:17px; color:var(--text-light); max-width:640px; margin-left:auto; margin-right:auto;"><span class="en-only">Our goal is simple: bring other single families together and foster a sharing culture.</span><span class="zh-only">我們的目標至為純粹：凝聚更多單一家族，深耕並弘揚共享文化。</span></p>
   </div>
 </section>
 
 <!-- SLOGAN -->
 <section class="slogan-section">
   <div class="slogan-content container">
-    <div class="section-label reveal">Our Slogan</div>
-    <h2 class="reveal reveal-delay-1">Empowering Yourself</h2>
-    <p class="reveal reveal-delay-2">True wealth begins with clarity, structure, and the freedom to build boldly. We equip you with expertise, infrastructure, and confidence with integrity and precision.</p>
+    <div class="section-label reveal"><span class="en-only">Our Slogan</span><span class="zh-only">我們的口號</span></div>
+    <h2 class="reveal reveal-delay-1"><span class="en-only">Empowering Yourself</span><span class="zh-only">自我賦能</span></h2>
+    <p class="reveal reveal-delay-2"><span class="en-only">True wealth begins with clarity, structure, and the freedom to build boldly. We equip you with expertise, infrastructure, and confidence with integrity and precision.</span><span class="zh-only">真正的財富始於清晰的思路、完善的結構，以及大膽開拓的自由。我們以誠信與精準為本，為您提供頂尖的專業知識、基礎設施以及堅實信心。</span></p>
   </div>
 </section>
 
@@ -243,30 +243,30 @@
 <section class="our-background">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Our Background</div>
-      <h2 class="reveal reveal-delay-1">Built on Professional Excellence</h2>
+      <div class="section-label reveal"><span class="en-only">Our Background</span><span class="zh-only">我們的背景</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Built on Professional Excellence</span><span class="zh-only">以專業卓越為根基</span></h2>
     </div>
     <div class="bg-grid">
       <div class="bg-card reveal">
         <div class="bg-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Customised Solution</h3>
-        <p>Tailored strategic plans built around your unique circumstances, goals, and timeline.</p>
+        <h3><span class="en-only">Customised Solution</span><span class="zh-only">客製化解決方案</span></h3>
+        <p><span class="en-only">Tailored strategic plans built around your unique circumstances, goals, and timeline.</span><span class="zh-only">量身定制戰略規劃，圍繞您的獨特情況、目標和時間表制定。</span></p>
       </div>
       <div class="bg-card reveal reveal-delay-1">
         <div class="bg-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Professional Excellence</h3>
-        <p>Integrity, patience, and professionalism in every interaction and every decision we make.</p>
+        <h3><span class="en-only">Professional Excellence</span><span class="zh-only">專業卓越</span></h3>
+        <p><span class="en-only">Integrity, patience, and professionalism in every interaction and every decision we make.</span><span class="zh-only">在每次互動和每個決策中，秉持誠信、耐心與專業精神。</span></p>
       </div>
       <div class="bg-card reveal reveal-delay-2">
         <div class="bg-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Goal-Driven Support</h3>
-        <p>Empowering clients to achieve their business and financial objectives with confidence.</p>
+        <h3><span class="en-only">Goal-Driven Support</span><span class="zh-only">目標導向支持</span></h3>
+        <p><span class="en-only">Empowering clients to achieve their business and financial objectives with confidence.</span><span class="zh-only">賦能客戶，協助他們充滿信心地實現業務與財務目標。</span></p>
       </div>
     </div>
   </div>
@@ -276,11 +276,11 @@
 <section class="team-section">
   <div class="container">
     <div class="section-header">
-      <div class="section-label reveal">Our Team</div>
-      <h2 class="reveal reveal-delay-1">Professional &amp; Dedicated Service</h2>
+      <div class="section-label reveal"><span class="en-only">Our Team</span><span class="zh-only">我們的團隊</span></div>
+      <h2 class="reveal reveal-delay-1"><span class="en-only">Professional &amp; Dedicated Service</span><span class="zh-only">專業且盡心盡力的服務</span></h2>
     </div>
     <div class="team-text">
-      <p class="reveal">We believe trust is the foundation of every long-term business relationship. And great service only comes from a professional and happy team — which we are.</p>
+      <p class="reveal"><span class="en-only">We believe trust is the foundation of every long-term business relationship. And great service only comes from a professional and happy team — which we are.</span><span class="zh-only">我們深信，信任是建立長期商業合作關係的磐石。而卓越的服務，源自於專業且具凝聚力的快樂團隊——這正是我們的寫照。</span></p>
       <p class="reveal reveal-delay-1">No complicated terms. No hidden charges. You're free to choose what works for you. And you can rest assured, the service quality you get is more than what you paid for.</p>
       <p class="reveal reveal-delay-2">When you outsource essential business functions to us, you free up your time and resources. You can focus on the core development and growth of your business. That's how you boost competitiveness and profitability.</p>
       <p class="reveal reveal-delay-3">We offer a comprehensive suite of business services. We give you the support and expertise to navigate complex business landscapes. We are committed to empowering you, to help you reach new heights.</p>
@@ -288,7 +288,7 @@
     </div>
     <div style="text-align:center; margin-top:48px;" class="reveal">
       <a href="contact.html" class="btn-teal">
-        Get In Touch
+        <span class="en-only">Get In Touch</span><span class="zh-only">立即聯絡</span>
         <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -361,5 +361,6 @@ revealEls.forEach(el => observer.observe(el));
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 </script>
+<script src="lang.js"></script>
 </body>
 </html>

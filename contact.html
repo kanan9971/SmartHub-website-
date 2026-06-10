@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -126,7 +126,7 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
       <div class="nav-right">
-      <div class="lang-toggle">EN | 繁體</div>
+      <div class="lang-toggle"><span class="lang-btn active" data-lang="en">EN</span> | <span class="lang-btn" data-lang="zh">繁體</span></div>
       <a href="contact.html" class="nav-cta">Contact Us</a>
       <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
@@ -144,8 +144,8 @@
 <section class="page-hero" style="background-image: linear-gradient(135deg, rgba(20,143,138,0.88), rgba(10,40,70,0.85)), url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1800&q=80'); background-size:cover; background-position:center;">
   <div class="container">
     <div class="page-hero-content">
-      <div class="page-hero-label">Get in Touch</div>
-      <h1>Contact Us</h1>
+      <div class="page-hero-label"><span class="en-only">Get in Touch</span><span class="zh-only">立即聯繫</span></div>
+      <h1><span class="en-only">Contact Us</span><span class="zh-only">聯絡我們</span></h1>
       <p>We're here to help. Reach us via phone, WhatsApp, WeChat, or email — or fill in the form and we'll get back to you within 24 hours.</p>
     </div>
   </div>
@@ -301,5 +301,6 @@ revealEls.forEach(el => observer.observe(el));
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 </script>
+<script src="lang.js"></script>
 </body>
 </html>
