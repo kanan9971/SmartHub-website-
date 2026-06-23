@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecosystem | SmartHub Connect</title>
+<meta name="description" content="Discover SmartHub Connect's premium ecosystem of workspaces, fintech, and corporate compliance solutions in Hong Kong.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.ecosystem-section { padding: var(--section-pad) 0; }
+.ecosystem-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.ecosystem-card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+  border: 1px solid rgba(26,45,44,0.08);
+  box-shadow: 0 18px 44px rgba(26,45,44,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.ecosystem-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212,169,76,0.35);
+  box-shadow: 0 28px 60px rgba(26,45,44,0.14);
+}
+.ecosystem-card-media {
+  min-height: 170px;
+  padding: 24px;
+  position: relative;
+  background:
+    radial-gradient(circle at top right, rgba(212,169,76,0.28), transparent 34%),
+    linear-gradient(135deg, #103b57 0%, #17324b 55%, #0f2437 100%);
+}
+.ecosystem-card:nth-child(2) .ecosystem-card-media {
+  background:
+    radial-gradient(circle at top right, rgba(212,169,76,0.26), transparent 34%),
+    linear-gradient(135deg, #12324b 0%, #10273d 60%, #0c1d2f 100%);
+}
+.ecosystem-card:nth-child(3) .ecosystem-card-media {
+  background:
+    radial-gradient(circle at top right, rgba(212,169,76,0.26), transparent 34%),
+    linear-gradient(135deg, #0e3145 0%, #13283c 58%, #0a1c2c 100%);
+}
+.ecosystem-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  color: #fff8e4;
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+.ecosystem-card-media h3 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  color: var(--white);
+  margin-top: 20px;
+  max-width: 10ch;
+}
+.ecosystem-card-media p {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.78);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 34ch;
+}
+.ecosystem-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  flex: 1;
+}
+.ecosystem-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ecosystem-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.ecosystem-feature svg {
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.ecosystem-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 10px 24px rgba(20,143,138,0.18);
+}
+.ecosystem-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(20,143,138,0.24);
+  background: linear-gradient(135deg, #123f5c, #18576c);
+}
+.ecosystem-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -2px;
+  font-size: 13px;
+  color: var(--gray-500);
+}
+.ecosystem-note::before {
+  content: '';
+  width: 38px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+@media (max-width: 900px) {
+  .ecosystem-grid { gap: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-contact-bar">
+    <div class="nav-contact-bar-inner">
+      <span>Tel: +852 2383 3283</span>
+      <span>Email: info@smarthubc.com</span>
+      <span>WhatsApp: +852 5501 3516</span>
+    </div>
+  </div>
+  <div class="nav-main">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="smarthub-logo.png" alt="SmartHub Connect" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ecosystem.html" class="active">Ecosystem</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="nav-right">
+      <div class="lang-toggle"><span class="lang-btn active" data-lang="en">EN</span> | <span class="lang-btn" data-lang="zh">繁體</span></div>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-close" id="mobileClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="ecosystem.html">Ecosystem</a><a href="services.html">Services</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="membership.html">Membership</a><a href="booking.html">Booking</a>
+  <a href="contact.html" style="background:var(--red); margin-top:8px;">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image: linear-gradient(135deg, rgba(20,143,138,0.88), rgba(10,40,70,0.85)), url('https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=1800&q=80'); background-size:cover; background-position:center;">
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="page-hero-label">Our Ecosystem</div>
+      <h1>Premium B2B solutions built for founders, operators, and global teams</h1>
+      <p>From premium offices to fintech setup and corporate compliance, SmartHub Connect brings together the core services modern businesses need to launch and scale with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM CARDS -->
+<section class="ecosystem-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">SmartHub Ecosystem</div>
+      <h2 class="reveal reveal-delay-1">Three premium services, one trusted platform</h2>
+      <p class="reveal reveal-delay-2">A refined service stack designed to support your business at every stage, with the same premium experience across each offering.</p>
+    </div>
+    <div class="ecosystem-grid">
+      <article class="ecosystem-card reveal">
+        <div class="ecosystem-card-media">
+          <div class="ecosystem-tag">Experience First, Pay Later</div>
+          <h3>Premium Workspaces</h3>
+          <p>Elegant office solutions for teams that want a stronger first impression, better client meetings, and flexible space without compromising brand quality.</p>
+        </div>
+        <div class="ecosystem-card-body">
+          <div class="ecosystem-features">
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Premium meeting and work lounge environments for modern businesses.
+            </div>
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Flexible access designed for founders, investors, and client-facing teams.
+            </div>
+          </div>
+          <a class="ecosystem-cta" href="booking.html">View Booking Options</a>
+        </div>
+      </article>
+
+      <article class="ecosystem-card reveal reveal-delay-1">
+        <div class="ecosystem-card-media">
+          <div class="ecosystem-tag">SFO Backed × PingPong</div>
+          <h3>Global Fintech</h3>
+          <p>1-day multi-currency business account setup and premier FX rates for companies operating across borders and moving fast.</p>
+        </div>
+        <div class="ecosystem-card-body">
+          <div class="ecosystem-features">
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Built for global collections, payments, and treasury flexibility.
+            </div>
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Fast onboarding with premium foreign exchange support.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ecosystem-card reveal reveal-delay-2">
+        <div class="ecosystem-card-media">
+          <div class="ecosystem-tag">Milestone-Based Billing</div>
+          <h3>Corporate Compliance</h3>
+          <p>HK company registration, audit, and tax services with 0 upfront fee, structured for clarity, control, and professional execution.</p>
+        </div>
+        <div class="ecosystem-card-body">
+          <div class="ecosystem-features">
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Company registration, audit, and tax support under one streamlined workflow.
+            </div>
+            <div class="ecosystem-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Clear milestones with no upfront fee to start your engagement.
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="ecosystem-note reveal reveal-delay-2" style="margin-top: 28px;">Premium service design with navy, gold, and white accents throughout.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>SmartHub Connect</h3>
+        <p>A staff-owned, genuinely independent single-family office based in Hong Kong.</p>
+        <address><div>25/F, 88 Lockhart Road, Wan Chai, Hong Kong</div><div>Tel: (+852) 2383 3283</div><div>Email: info@smarthubc.com</div></address>
+      </div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="events.html">Events</a><a href="partnership.html">Partnership</a><a href="join-us.html">Join Us</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="services.html">Company Incorporation</a><a href="services.html">M&amp;A Services</a><a href="services.html">Secretarial &amp; Compliance</a><a href="services.html">Accounting</a><a href="services.html">Virtual Office</a></div>
+      <div class="footer-col"><h4>More</h4><a href="membership.html">Membership</a><a href="booking.html">Booking</a><a href="contact.html">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 SmartHub Connect Limited. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://wa.me/85255013516" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.29-1.243l-.307-.184-2.87.852.852-2.87-.184-.307A8 8 0 1112 20z"/></svg></a>
+        <a href="#" aria-label="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/><path d="M23.96 14.418c0-3.29-3.165-5.96-7.069-5.96-3.903 0-7.07 2.67-7.07 5.96 0 3.29 3.167 5.96 7.07 5.96a8.3 8.3 0 002.318-.33.7.7 0 01.583.08l1.546.906a.265.265 0 00.136.044c.13 0 .236-.108.236-.24a.408.408 0 00-.039-.174l-.317-1.204a.48.48 0 01.173-.54c1.49-1.096 2.433-2.714 2.433-4.502zm-9.585-1.062a.96.96 0 01-.946-.963c0-.532.423-.963.946-.963.522 0 .946.431.946.963a.96.96 0 01-.946.963zm5.032 0a.96.96 0 01-.946-.963c0-.532.424-.963.946-.963.523 0 .946.431.946.963a.96.96 0 01-.946.963z"/></svg></a>
+        <a href="mailto:info@smarthubc.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+<script src="lang.js"></script>
+</body>
+</html>
