@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nodemailer": "^6.9.14",
+    "@vercel/kv": "^2.0.0"
+  }
+}

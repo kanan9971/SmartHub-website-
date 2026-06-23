@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<!-- Layer 3: reCAPTCHA v3 — replace YOUR_RECAPTCHA_SITE_KEY after registering at google.com/recaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
 <style>
 .contact-section { padding: var(--section-pad) 0; }
 .contact-grid {
@@ -94,6 +96,9 @@
   text-align: center;
   font-size: 15px; color: var(--navy); font-weight: 500; margin-top: 8px;
 }
+
+/* Layer 1: honeypot — off-screen, not display:none (bots detect display:none and skip it) */
+.hp-field { position: absolute; left: -9999px; top: -9999px; }
 
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; }
@@ -229,26 +234,39 @@
         <div class="section-label">For Enquiry</div>
         <h3>Send Us a Message</h3>
         <p>Fill in your details and we'll respond within 24 hours on business days.</p>
-        <form onsubmit="return false;">
+        <form id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label>Full Name</label>
-              <input type="text" class="form-input" placeholder="Your full name">
+              <input type="text" name="name" class="form-input" placeholder="Your full name" required>
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input type="tel" class="form-input" placeholder="+852 XXXX XXXX">
+              <input type="tel" name="phone" class="form-input" placeholder="+852 XXXX XXXX">
             </div>
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" class="form-input" placeholder="your@email.com">
+            <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea class="form-textarea" placeholder="How can we help you?"></textarea>
+            <textarea name="message" class="form-textarea" placeholder="How can we help you?" required></textarea>
           </div>
-          <button type="submit" class="btn-teal" style="width:100%;">Submit Message</button>
+
+          <!-- Layer 1: Honeypot — real users never see this; bots fill it and get silently rejected -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="_website">Website</label>
+            <input type="text" id="_website" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Layer 4: server-issued HMAC token, fetched on page load -->
+          <input type="hidden" name="formToken" id="formToken">
+
+          <!-- success / error feedback -->
+          <div id="formMessage" style="display:none;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:14px;line-height:1.5;"></div>
+
+          <button type="submit" id="submitBtn" class="btn-teal" style="width:100%;">Submit Message</button>
         </form>
       </div>
     </div>
@@ -301,6 +319,66 @@ const observer = new IntersectionObserver((entries) => {
 revealEls.forEach(el => observer.observe(el));
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+
+// ── Layer 4: fetch HMAC-signed token as soon as the page loads ─────────────
+// The server records the issue time. On submit, it checks the signature and
+// that at least 2 seconds have passed — scripts can't fake the delay.
+async function refreshFormToken() {
+  try {
+    const res = await fetch('/api/form-token');
+    const data = await res.json();
+    document.getElementById('formToken').value = data.token;
+  } catch { /* silently fail; server will reject if token is missing */ }
+}
+refreshFormToken();
+
+// ── Contact form submit handler ────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMessage');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  msg.style.display = 'none';
+
+  try {
+    // Layer 3: get reCAPTCHA v3 token — replace YOUR_RECAPTCHA_SITE_KEY below
+    let recaptchaToken = '';
+    if (typeof grecaptcha !== 'undefined') {
+      recaptchaToken = await grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', { action: 'contact' });
+    }
+
+    const formData = new FormData(this);
+    const body = Object.fromEntries(formData);
+    body['g-recaptcha-response'] = recaptchaToken;
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      msg.style.cssText = 'display:block;background:#d4edda;color:#155724;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:14px;';
+      msg.textContent = "Message sent! We'll get back to you within 24 hours.";
+      this.reset();
+      refreshFormToken(); // get a fresh token for the next submission
+    } else {
+      msg.style.cssText = 'display:block;background:#f8d7da;color:#721c24;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:14px;';
+      msg.textContent = data.error || 'Something went wrong. Please try again.';
+    }
+  } catch {
+    msg.style.cssText = 'display:block;background:#f8d7da;color:#721c24;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:14px;';
+    msg.textContent = 'Network error. Please try again.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Submit Message';
+  }
+});
 </script>
 <script src="lang.js"></script>
 </body>

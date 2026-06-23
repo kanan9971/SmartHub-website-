@@ -75,6 +75,160 @@
   padding: 7px 12px;
   border-radius: 999px;
 }
+
+/* ROW / COL GRID */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+.row.g-4 > [class*="col-"] {
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+@media (min-width: 992px) {
+  .col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+}
+.d-grid { display: grid; }
+.gap-3 { gap: 16px; }
+
+/* PACKAGE COLLAPSE */
+.package-services {
+  display: none;
+}
+.package-services.is-open {
+  display: grid;
+}
+.package-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(0, 242, 254, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2f7f5;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.package-toggle-btn:hover {
+  background: rgba(26, 181, 173, 0.2);
+  border-color: var(--teal-bright);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.package-toggle-btn .toggle-icon {
+  transition: transform 0.3s ease;
+}
+.package-toggle-btn[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* AI SERVICES (SECTION 4) */
+.ai-services-section {
+  padding: var(--section-pad) 0;
+  background: var(--off-white);
+}
+.ai-services-section .section-header h2 {
+  color: var(--navy-deep);
+}
+.ai-feature-card {
+  background: var(--white);
+  border: 1px solid var(--warm-gray);
+  border-radius: var(--radius);
+  padding: clamp(24px, 3vw, 32px);
+  transition: all 0.3s ease;
+}
+.ai-feature-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(26, 181, 173, 0.12);
+}
+.ai-feature-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  color: var(--navy-deep);
+  margin-bottom: 10px;
+}
+.ai-feature-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-light);
+}
+.ai-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--teal-pale);
+  color: var(--teal-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* CONTACT CTA (SECTION 5) */
+.services-cta-section {
+  padding: clamp(48px, 7vw, 96px) 0;
+  background: linear-gradient(135deg, var(--teal-deep) 0%, #0a2846 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.services-cta-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+.services-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+.services-cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+.services-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--teal-deep);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.services-cta-btn:hover {
+  background: var(--teal-pale);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .services-card-grid { grid-template-columns: 1fr; }
+}
   </style>
 </head>
 <body>
@@ -145,7 +299,11 @@
           <h3 style="color: #ffffff;">Corporate Compliance Package</h3>
           <p style="color: #cbd5e1; opacity: 0.9;">Formation, compliance, finance, and relocation support for a strong operating foundation.</p>
         </div>
-        <div class="d-grid gap-3">
+        <button type="button" class="package-toggle-btn" aria-expanded="false" aria-controls="package-services-01">
+          <span class="toggle-label">View Services</span>
+          <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="package-services d-grid gap-3" id="package-services-01">
           <article class="service-card">
             <span class="badge bg-dark" style="color: #00f2fe;">Corporate Setup</span>
             <h3><span class="en-only">Company Incorporation</span><span class="zh-only">公司成立服務</span></h3>
@@ -185,7 +343,11 @@
           <h3 style="color: #ffffff;">Global Fintech &amp; Funding Package</h3>
           <p style="color: #cbd5e1; opacity: 0.9;">Treasury, banking, and funding tools built to support cross-border operations.</p>
         </div>
-        <div class="d-grid gap-3">
+        <button type="button" class="package-toggle-btn" aria-expanded="false" aria-controls="package-services-02">
+          <span class="toggle-label">View Services</span>
+          <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="package-services d-grid gap-3" id="package-services-02">
           <article class="service-card">
             <span class="badge bg-dark" style="color: #00f2fe;">Banking Access</span>
             <h3><span class="en-only">Banking Service</span><span class="zh-only">銀行開戶服務</span></h3>
@@ -205,7 +367,11 @@
           <h3 style="color: #ffffff;">Premium Workspaces &amp; Growth Package</h3>
           <p style="color: #cbd5e1; opacity: 0.9;">Workspace, marketing, property, and talent services for visible business growth.</p>
         </div>
-        <div class="d-grid gap-3">
+        <button type="button" class="package-toggle-btn" aria-expanded="false" aria-controls="package-services-03">
+          <span class="toggle-label">View Services</span>
+          <svg class="toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="package-services d-grid gap-3" id="package-services-03">
           <article class="service-card">
             <span class="badge bg-dark" style="color: #00f2fe;">Workspace</span>
             <h3><span class="en-only">Serviced &amp; Virtual Office Rental Service</span><span class="zh-only">服務式與虛擬辦公室租賃</span></h3>
@@ -229,6 +395,66 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- AI VIDEO LOCALIZATION (SECTION 4) -->
+<section class="ai-services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">AI Services</div>
+      <h2>AI Video Localization Services</h2>
+      <p>Reach global audiences with AI-powered video translation, transcription, and post-editing — delivered with enterprise-grade accuracy.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-lg-6 reveal">
+        <article class="ai-feature-card">
+          <div class="ai-feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Multi-language Support</h3>
+          <p>Supports over 14 popular languages, including Traditional Chinese, English, Japanese, Korean, Spanish, and more.</p>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6 reveal reveal-delay-1">
+        <article class="ai-feature-card">
+          <div class="ai-feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>High Accuracy</h3>
+          <p>AI translation accuracy up to 99%, ensuring your message stays clear and faithful across every market.</p>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6 reveal reveal-delay-2">
+        <article class="ai-feature-card">
+          <div class="ai-feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3>Complete Delivery</h3>
+          <p>Provides full post-translation transcripts so your team can review, repurpose, and publish with confidence.</p>
+        </article>
+      </div>
+      <div class="col-12 col-lg-6 reveal reveal-delay-3">
+        <article class="ai-feature-card">
+          <div class="ai-feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>After-sales Guarantee</h3>
+          <p>Includes post-editing refinement service to ensure every deliverable meets your quality standards.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA (SECTION 5) -->
+<section class="services-cta-section">
+  <div class="services-cta-inner reveal">
+    <h2>Interested in our AI services or other business solutions?</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLsEAb7Wib262sSCl1w63PXm3CUOBFRfQgJsgl0F9hx23yTw/viewform" class="services-cta-btn" target="_blank" rel="noopener noreferrer">
+      Contact Us Now
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </section>
 
@@ -517,6 +743,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Package service toggles
+document.querySelectorAll('.package-toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    const isOpen = panel.classList.contains('is-open');
+    panel.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    btn.querySelector('.toggle-label').textContent = isOpen ? 'View Services' : 'Hide Services';
   });
 });
 
